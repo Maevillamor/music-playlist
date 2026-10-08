@@ -1,0 +1,142 @@
+body {
+  background-color: #0f0f11;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.playlist-card {
+  width: 100%;
+  max-width: 420px;
+  background: #18181c;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.playlist-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.artist-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.badge {
+  color: #1db954;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.playlist-header h1 {
+  margin: 4px 0;
+  font-size: 1.5rem;
+}
+
+.playlist-header p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.btn-play {
+  width: 100%;
+  background-color: #1db954;
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.song-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.song-item.active {
+  background: rgba(29, 185, 84, 0.15);
+}
+
+.song-item.active strong {
+  color: #1db954;
+}
+
+.song-number {
+  width: 20px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.song-info small {
+  color: #888;
+}
+
+.song-duration {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.player-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #23232a;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.np-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.np-artist {
+  margin: 2px 0 0 0;
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.btn-player-toggle {
+  background: #1db954;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
