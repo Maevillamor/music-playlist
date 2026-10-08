@@ -12,7 +12,7 @@ body {
 .playlist-card {
   width: 100%;
   max-width: 420px;
-  background: #18181c;
+  background: #17173f;
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -33,7 +33,7 @@ body {
 }
 
 .badge {
-  color: #1db954;
+  color: #e8f1eb;
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -52,7 +52,7 @@ body {
 
 .btn-play {
   width: 100%;
-  background-color: #1db954;
+  background-color: #efefef;
   color: #000;
   border: none;
   padding: 10px;
@@ -87,7 +87,7 @@ body {
 }
 
 .song-item.active strong {
-  color: #1db954;
+  color: #c4c4c4;
 }
 
 .song-number {
@@ -133,7 +133,7 @@ body {
 }
 
 .btn-player-toggle {
-  background: #1db954;
+  background: #c2c8c4;
   border: none;
   width: 36px;
   height: 36px;
