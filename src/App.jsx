@@ -1,18 +1,15 @@
-import { useState } from 'react';
 import './assets/musicPL_design.css';
 import FavArtist from './assets/favArtist.png';
 
-function App() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [current, setCurrent] = useState({ title: "Pare Ko", artist: "Parokya Ni Edgar" });
+const playlist = [
+  { title: "Pare Ko", artist: "Parokya Ni Edgar", duration: "05.15" },
+  { title: "Kill Bill", artist: "Sza", duration: "04.15" },
+  { title: "Best Part", artist: "Daniel Caesar", duration: "03.00" },
+  { title: "Risk It All", artist: "Bruno Mars", duration: "05.10" },
+  { title: "Pangarap Lang Kita", artist: "Parokya Ni Edgar", duration: "04.15" }
+];
 
-  const playlist = [
-    { title: "Kill Bill", artist: "Sza", duration: "04.15" },
-    { title: "Best Part", artist: "Daniel Caesar", duration: "03.00" },
-    { title: "Risk It All", artist: "Bruno Mars", duration: "05.10" },
-    { title: "Pangarap Lang Kita", artist: "Parokya Ni Edgar", duration: "04.15" }
-  ];
-
+export default function App() {
   return (
     <div className="player">
       <h2>MAYI’S FAVORITE ARTIST</h2>
@@ -21,15 +18,17 @@ function App() {
 
       <div className="now-playing">
         <div className="info">
-          <h3>{current.title}</h3>
-          <p>{current.artist}</p>
+          <h3>{playlist[0].title}</h3>
+          <p>{playlist[0].artist}</p>
         </div>
-        <div className="slider"><div className="fill"></div></div>
+
+        <div className="slider">
+          <div className="fill" />
+        </div>
+
         <div className="buttons">
           <button>⏮</button>
-          <button onClick={() => setIsPlaying(!isPlaying)} className="play-btn">
-            {isPlaying ? "⏸" : "▶"}
-          </button>
+          <button className="play-btn">▶</button>
           <button>⏭</button>
         </div>
       </div>
@@ -37,21 +36,62 @@ function App() {
       <hr />
 
       <div className="list">
-        {playlist.map((song, i) => (
-          <div key={i} className="song" onClick={() => { setCurrent(song); setIsPlaying(true); }}>
-            <div className="song-left">
-              <span>▶</span>
-              <div>
-                <h4>{song.title}</h4>
-                <p>{song.artist}</p>
-              </div>
+        <div className="song">
+          <div className="song-left">
+          
+            <div>
+              <h4>Pare Ko</h4>
+              <p>Parokya Ni Edgar</p>
             </div>
-            <span>{song.duration}</span>
           </div>
-        ))}
+          <span>05.15</span>
+        </div>
+
+        <div className="song">
+          <div className="song-left">
+            
+            <div>
+              <h4>Kill Bill</h4>
+              <p>Sza</p>
+            </div>
+          </div>
+          <span>04.15</span>
+        </div>
+
+        <div className="song">
+          <div className="song-left">
+           
+            <div>
+              <h4>Best Part</h4>
+              <p>Daniel Caesar</p>
+            </div>
+          </div>
+          <span>03.00</span>
+        </div>
+
+        <div className="song">
+          <div className="song-left">
+           
+            <div>
+              <h4>Risk It All</h4>
+              <p>Bruno Mars</p>
+            </div>
+          </div>
+          <span>05.10</span>
+        </div>
+
+        <div className="song">
+          <div className="song-left">
+            
+            <div>
+              <h4>Pangarap Lang Kita</h4>
+              <p>Parokya Ni Edgar</p>
+            </div>
+          </div>
+          <span>04.15</span>
+        </div>
       </div>
     </div>
+
   );
 }
-
-export default App;
