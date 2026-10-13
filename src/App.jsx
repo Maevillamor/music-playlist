@@ -44,7 +44,7 @@ export default function App() {
               <p>Parokya Ni Edgar</p>
             </div>
           </div>
-          <span>05.15</span>
+          <span>05:15</span>
         </div>
 
         <div className="song">
@@ -55,7 +55,7 @@ export default function App() {
               <p>Sza</p>
             </div>
           </div>
-          <span>04.15</span>
+          <span>04:15</span>
         </div>
 
         <div className="song">
@@ -66,7 +66,7 @@ export default function App() {
               <p>Daniel Caesar</p>
             </div>
           </div>
-          <span>03.00</span>
+          <span>03:00</span>
         </div>
 
         <div className="song">
@@ -77,7 +77,7 @@ export default function App() {
               <p>Bruno Mars</p>
             </div>
           </div>
-          <span>05.10</span>
+          <span>05:10</span>
         </div>
 
         <div className="song">
@@ -88,7 +88,7 @@ export default function App() {
               <p>Parokya Ni Edgar</p>
             </div>
           </div>
-          <span>04.15</span>
+          <span>04:15</span>
         </div>
       </div>
     </div>
