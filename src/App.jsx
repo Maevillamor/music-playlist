@@ -1,70 +1,56 @@
 import { useState } from 'react';
 import './assets/musicPL_design.css';
-import Sza from './assets/Sza.jpg';
-
-const szaPlaylist = [
-  { id: 1, title: 'Kill Bill', duration: '2:33' },
-  { id: 2, title: 'Snooze', duration: '3:21' },
-  { id: 3, title: 'Good Days', duration: '4:39' },
-  { id: 4, title: 'Saturn', duration: '3:06' },
-  { id: 5, title: 'Shirt', duration: '3:01' },
-];
+import FavArtist from './assets/favArtist.png';
 
 function App() {
-  const [currentSong, setCurrentSong] = useState(szaPlaylist[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [current, setCurrent] = useState({ title: "Pare Ko", artist: "Parokya Ni Edgar" });
 
-  const togglePlay = () => setIsPlaying(!isPlaying);
-
-  const selectSong = (song) => {
-    setCurrentSong(song);
-    setIsPlaying(true);
-  };
+  const playlist = [
+    { title: "Kill Bill", artist: "Sza", duration: "04.15" },
+    { title: "Best Part", artist: "Daniel Caesar", duration: "03.00" },
+    { title: "Risk It All", artist: "Bruno Mars", duration: "05.10" },
+    { title: "Pangarap Lang Kita", artist: "Parokya Ni Edgar", duration: "04.15" }
+  ];
 
   return (
-    <main className="playlist-card">
-      
-      <header className="playlist-header">
-        <img src={Sza} alt="SZA" className="artist-img" />
-        <div>
-          <span className="badge">Mayi's Playlist</span>
-          <h1>SZA</h1>
-          <p>My top 5 favorite songs By Sza</p>
+    <div className="player">
+      <h2>MAYI’S FAVORITE ARTIST</h2>
+
+      <img src={FavArtist} alt="Album Art" className="cover" />
+
+      <div className="now-playing">
+        <div className="info">
+          <h3>{current.title}</h3>
+          <p>{current.artist}</p>
         </div>
-      </header>
+        <div className="slider"><div className="fill"></div></div>
+        <div className="buttons">
+          <button>⏮</button>
+          <button onClick={() => setIsPlaying(!isPlaying)} className="play-btn">
+            {isPlaying ? "⏸" : "▶"}
+          </button>
+          <button>⏭</button>
+        </div>
+      </div>
 
+      <hr />
 
-      {/* Song List */}
-      <ul className="song-list">
-        {szaPlaylist.map((song, index) => (
-          <li
-            key={song.id}
-            className={`song-item ${currentSong.id === song.id ? 'active' : ''}`}
-            onClick={() => selectSong(song)}
-          >
-            <span className="song-number">
-              {currentSong.id === song.id && isPlaying ? '🎵' : index + 1}
-            </span>
-            <div className="song-info">
-              <strong>{song.title}</strong>
-              <small>{song.album}</small>
+      <div className="list">
+        {playlist.map((song, i) => (
+          <div key={i} className="song" onClick={() => { setCurrent(song); setIsPlaying(true); }}>
+            <div className="song-left">
+              <span>▶</span>
+              <div>
+                <h4>{song.title}</h4>
+                <p>{song.artist}</p>
+              </div>
             </div>
-            <span className="song-duration">{song.duration}</span>
-          </li>
+            <span>{song.duration}</span>
+          </div>
         ))}
-      </ul>
-
-      {/* Player Bar */}
-      <footer className="player-bar">
-        <div>
-          <p className="np-title">{currentSong.title}</p>
-          <p className="np-artist">SZA • {currentSong.album}</p>
-        </div>
-        <button className="btn-player-toggle" onClick={togglePlay}>
-          {isPlaying ? '⏸' : '▶'}
-        </button>
-      </footer>
-    </main>
+      </div>
+    </div>
   );
 }
 
